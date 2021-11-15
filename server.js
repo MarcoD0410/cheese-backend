@@ -60,11 +60,11 @@ app.get("/", (req, res) => {
     res.send("Hello World")
 })
 
-// PEOPLE INDEX ROUTE
+//  INDEX ROUTE
 app.get("/cheese", async (req, res) => {
     try {
-      // send all people
-      res.json(await People.find({}));
+      
+      res.json(await Cheese.find({}));
     } catch (error) {
       //send error
       res.status(400).json(error);
@@ -72,8 +72,7 @@ app.get("/cheese", async (req, res) => {
   });
 
 
-  // People create route
-// post request to /people, uses request body to make new people
+  // CREATE ROUTE 
 app.post("/cheese", async (req, res) => {
     try {
       // screate a new person
@@ -84,8 +83,6 @@ app.post("/cheese", async (req, res) => {
   });
 
 
-  // People update  route
-// put request /people/:id, updates person based on id with request body
 app.put("/cheese/:id", async (req, res) => {
     try {
         // update a person
